@@ -56,9 +56,19 @@ public class MainClass {
             System.out.println(" name is "+name[i]+"--"+(gender[i]=='m'?"His":"Her")+" phone number is"+nos[i]);
         }
         
+        String serarchTerm="Rahuls";
+        boolean found=false;
         for(String n :name){
-            System.out.println(n);
+            if(n==serarchTerm){
+//                continue;
+//                System.out.println("Congratulations "+serarchTerm+" You have passed");
+                found=true;
+                break;
+            }
         }
+        System.out.println((found?"Congratulations":"Sorry"));
+        
+        
         
         
     }
