@@ -69,8 +69,25 @@ public class MainClass {
         System.out.println((found?"Congratulations":"Sorry"));
         
         
-        
-        
+//        System.out.println(getMax(0, 0));
+        int x=getMax(45,67);
+        int y=getMax(67, 678);
+        System.out.println(x+","+y);
+        int sum=getSum(23,23,23,23,24,235,2523,2332,23423523);
+        System.out.println(sum);
+    }
+    
+    public static int getMax(int a,int b){
+        int max=a>b?a:b;
+        return max;
+    }
+    
+    public static int getSum(int... nums){
+        int sum=0;
+        for (int i:nums) {
+            sum+=i;
+        }
+        return sum;
     }
     
     
