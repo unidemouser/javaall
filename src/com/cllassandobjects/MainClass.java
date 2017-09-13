@@ -11,13 +11,23 @@ package com.cllassandobjects;
  */
 public class MainClass {
     public static void main(String args[]){
-        Person p=new Person();
-//        p.name="Rahul ";
-        p.setName("Rah");
-        p.address="Biratnagar 1, Pokharia";
-        p.gender='m';
-        p.age=24;
+//        Person p=new Person();
+//       p.setName("Rahul Niraula");
+//        p.setAddress("Biratnagar 1, Pokharia");
+//        p.setGender('m');
+//        p.setAge(24);
+//        System.out.println(p.getName());
+//        p.move();
+//        p.greet("Sanjib");
+        Person p=new Person("Rahul 123","Biratnagar",23,'m');
+        p.setName("Rahul Niraula");
+        p.increaseAge();
+        
         p.getFullInfo();
-        p.move();
+        Person p1=new Person("Sanjib","Kathmandu",24,'m');
+        p1.getFullInfo();
+        
+        Person p2=new Person("Abc",'m');
+        p2.setAge(23);
     }
 }
