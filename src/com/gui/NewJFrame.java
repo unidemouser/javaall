@@ -5,6 +5,10 @@
  */
 package com.gui;
 
+import java.io.IOException;
+import java.util.InputMismatchException;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author rahul
@@ -377,7 +381,38 @@ public class NewJFrame extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        String name=jTextField1.getText();
+        try{
+            String name=jTextField1.getText();
+            int age=Integer.parseInt(jTextField2.getText());
+            String email=jTextField6.getText();
+            String gender=jComboBox1.getActionCommand();
+
+            String poBOx=jTextField3.getText();
+            String street=jTextField4.getText();
+            String country=jTextField5.getText();
+
+            String school=jTextField8.getText();
+            String college=jTextField9.getText();
+            Double plusTwoPercentage=Double.parseDouble(jTextField10.getText());
+
+            String destinationCountry=jTextField11.getText();
+            String intendedCourse=jTextField12.getText();
+            String bio=jTextArea1.getText();
+
+            Address a=new Address(poBOx, street, country);
+            Student s=new Student(school, college, destinationCountry, intendedCourse, bio, 70, plusTwoPercentage,a, name, email, age, 'm');
+            s.saveToFile();
+        }catch(NumberFormatException e){
+            JOptionPane.showMessageDialog(this, "Number Format not valid"+e.getCause());
+//            System.out.println("");
+e.printStackTrace();
+        }catch(InputMismatchException e){
+            JOptionPane.showMessageDialog(this, "Please enter a valid number");
+        }catch(IOException e){
+            JOptionPane.showMessageDialog(this, "Error writing to file");
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(this, "An error Occured");
+        }
         
     }//GEN-LAST:event_jButton1ActionPerformed
     private void setAdditionalData(){
